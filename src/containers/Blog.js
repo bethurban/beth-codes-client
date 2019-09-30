@@ -23,6 +23,8 @@ class Blog extends Component {
         <h1>{this.state.blog.title}</h1>
         <div id="description">
           <p>{this.state.blog.description}</p>
+          // Render individual blog posts
+          // link to create new post
         </div>
       </div>
     )
