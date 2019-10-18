@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import New from './New.js';
 
 class Blog extends Component {
 
@@ -23,8 +25,7 @@ class Blog extends Component {
         <h1>{this.state.blog.title}</h1>
         <div id="description">
           <p>{this.state.blog.description}</p>
-          // Render individual blog posts
-          // link to create new post
+          <Link to="/new">New blog post</Link>
         </div>
       </div>
     )

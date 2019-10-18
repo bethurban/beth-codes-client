@@ -20,7 +20,7 @@ class New extends Component {
   render() {
     return (
       <div id="form">
-      
+        Hello!
       </div>
     )
   }
