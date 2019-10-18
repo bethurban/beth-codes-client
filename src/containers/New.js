@@ -10,16 +10,6 @@ class New extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/api/v1/blogs/1')
-  //     .then(resp => resp.json())
-  //     .then(json => {
-  //       this.setState({
-  //         blog: json
-  //       })
-  //     })
-  // }
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -29,7 +19,19 @@ class New extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.title, this.state.content)
+    fetch('http://localhost:3000/api/v1/blogs/1/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+        blog_id: 1,
+        title: event.target.title.value,
+        content: event.target.content.value
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(resp => resp.json())
+      .then(json => console.log(json))
   }
 
   render() {
