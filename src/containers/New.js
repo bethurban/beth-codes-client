@@ -31,7 +31,13 @@ class New extends Component {
       }
     })
       .then(resp => resp.json())
-      .then(json => console.log(json))
+      .then(json => {
+        if (json.id) {
+          alert("Published!")
+        } else {
+          throw new Error("There was a problem publishing this post.")
+        }
+      })
   }
 
   render() {
